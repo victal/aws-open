@@ -15,8 +15,9 @@ def create_parser():
       open_group.add_argument('-a', '--all', action='store_true', help='If set, will add the SSH rule to all existing Security Groups')
 
       p_close = subparsers.add_parser('close', help='Removs rules allowing SSH access to the local IP')
-      p_close.add_argument('--name', dest='name', help='Name of a Securiy Group from which to remove the SSH rules')
-      p_close.add_argument('-a', '--all', action='store_true', help='If set, will try to remove all SSH rules from a given SG, or all SSH rules specific to the local IP, otherwise')
+      close_group = p_close.add_mutually_exclusive_group(required=True)
+      close_group.add_argument('--name', dest='name', help='Name of a Securiy Group from which to remove the SSH rules')
+      close_group.add_argument('-a', '--all', action='store_true', help='If set, will try to remove all SSH rules from a given SG, or all SSH rules specific to the local IP, otherwise')
 
       subparsers.add_parser('list-open', help='Lists Security Groups that have SSH rules allowing access from this IP')
       subparsers.add_parser('list-closed', help='Lists Security Groups that do not have SSH rules allowing access from this IP')
