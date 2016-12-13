@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='aws-open',
       version='1.0.0',
@@ -11,5 +11,8 @@ setup(name='aws-open',
       description='A set of scripts to open and close SSH on AWS Security groups easily',
       license='MIT',
       packages=['sesame'],
-      requires=['requests', 'boto3']
+      requires=['requests', 'boto3'],
+      entry_points={
+            'console_scripts': []
+            }
         )
