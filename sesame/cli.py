@@ -32,6 +32,8 @@ def main():
             sg_close(sg_name=args.name, all=args.all)
       elif args.command == 'open':
             sg_open(sg_name=args.name, all=args.all)
+      else:
+            parser.parse_args(['-h'])
 
 
 if __name__ == "__main__":

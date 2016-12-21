@@ -13,6 +13,8 @@ setup(name='aws-open',
       packages=['sesame'],
       requires=['requests', 'boto3'],
       entry_points={
-            'console_scripts': []
+            'console_scripts': [
+                  'awsesame=sesame.cli:main'
+                  ]
             }
         )
