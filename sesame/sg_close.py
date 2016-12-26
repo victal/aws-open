@@ -4,7 +4,7 @@
 from utils import get_external_ip, get_sg_id_from_name
 import boto3
 
-def sg_close(sg_name=None, all=False):
+def sg_close(sg_name=None, all_sgs=False):
       sg_id = get_sg_id_from_name(sg_name)
       ec2 = boto3.resource('ec2')
       current_ip = get_external_ip()

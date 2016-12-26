@@ -29,9 +29,9 @@ def main():
       parser = create_parser()
       args = parser.parse_args()
       if args.command == 'close':
-            sg_close(sg_name=args.name, all=args.all)
+            sg_close(sg_name=args.name, all_sgs=args.all)
       elif args.command == 'open':
-            sg_open(sg_name=args.name, all=args.all)
+            sg_open(sg_name=args.name, all_sgs=args.all)
       else:
             parser.parse_args(['-h'])
 
