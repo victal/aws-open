@@ -21,3 +21,7 @@ def get_sg_id_from_name(sg_name):
       elif len(groups) == 0:
             raise Exception('No SecurityGroups found with name: %s' % sg_name)
       return groups[0].get('GroupId')
+
+def get_all_sgs():
+      ec2 = boto3.resource('ec2')
+      return ec2.security_groups.all()

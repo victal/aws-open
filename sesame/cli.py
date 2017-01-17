@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
 
 from argparse import ArgumentParser
 from sg_open import sg_open
 from sg_close import sg_close
+from sg_list import list_open_sgs, list_closed_sgs
 
 def create_parser():
       parser = ArgumentParser()
@@ -27,13 +29,19 @@ def create_parser():
 
 def main():
       parser = create_parser()
+      if len(sys.argv) == 1:
+            parser.print_help()
+            sys.exit(0)
+
       args = parser.parse_args()
       if args.command == 'close':
             sg_close(sg_name=args.name, all_sgs=args.all)
       elif args.command == 'open':
             sg_open(sg_name=args.name, all_sgs=args.all)
-      else:
-            parser.parse_args(['-h'])
+      elif args.command == 'list-open':
+            list_open_sgs()
+      elif args.command == 'list-closed':
+            list_closed_sgs()
 
 
 if __name__ == "__main__":
