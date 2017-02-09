@@ -10,11 +10,11 @@ setup(name='aws-open',
       url='https://github.com/victal/aws-open',
       description='A set of scripts to open and close SSH on AWS Security groups easily',
       license='MIT',
-      packages=['sesame'],
+      packages=['awsesame'],
       requires=['requests', 'boto3'],
       entry_points={
             'console_scripts': [
-                  'awsesame=sesame.cli:main'
+                  'aws-open=awsesame.cli:main'
                   ]
             }
         )

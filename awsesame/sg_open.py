@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from utils import get_external_ip, get_sg_id_from_name
+from .utils import get_external_ip, get_sg_id_from_name
 import boto3
 
 def __open_one_sg(sg_name):

@@ -4,9 +4,9 @@
 import sys
 
 from argparse import ArgumentParser
-from sg_open import sg_open
-from sg_close import sg_close
-from sg_list import print_open_sgs, print_closed_sgs
+from .sg_open import sg_open
+from .sg_close import sg_close
+from .sg_list import print_open_sgs, print_closed_sgs
 
 def create_parser():
       parser = ArgumentParser()

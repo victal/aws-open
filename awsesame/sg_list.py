@@ -3,7 +3,7 @@
 
 import boto3
 from ipaddress import IPv4Network, IPv4Address
-from utils import get_external_ip
+from .utils import get_external_ip
 
 def list_open_sgs():
       ec2 = boto3.resource('ec2')

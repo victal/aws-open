@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from utils import get_external_ip, get_sg_id_from_name, get_all_sgs
+from .utils import get_external_ip, get_sg_id_from_name, get_all_sgs
 from ipaddress import IPv4Address
-from sg_list import get_open_permissions
+from .sg_list import get_open_permissions
 import boto3
 
 def sg_close(sg_name=None, all_sgs=False):
