@@ -6,7 +6,7 @@ import sys
 from argparse import ArgumentParser
 from sg_open import sg_open
 from sg_close import sg_close
-from sg_list import list_open_sgs, list_closed_sgs
+from sg_list import print_open_sgs, print_closed_sgs
 
 def create_parser():
       parser = ArgumentParser()
@@ -16,7 +16,7 @@ def create_parser():
       open_group.add_argument('--name', dest='name', help='Name of a Securiy Group to which to add the SSH rule')
       open_group.add_argument('-a', '--all', action='store_true', help='If set, will add the SSH rule to all existing Security Groups')
 
-      p_close = subparsers.add_parser('close', help='Removs rules allowing SSH access to the local IP')
+      p_close = subparsers.add_parser('close', help='Removes rules allowing SSH access to the local IP')
       close_group = p_close.add_mutually_exclusive_group(required=True)
       close_group.add_argument('--name', dest='name', help='Name of a Securiy Group from which to remove the SSH rules')
       close_group.add_argument('-a', '--all', action='store_true', help='If set, will try to remove all SSH rules from a given SG, or all SSH rules specific to the local IP, otherwise')
@@ -39,9 +39,9 @@ def main():
       elif args.command == 'open':
             sg_open(sg_name=args.name, all_sgs=args.all)
       elif args.command == 'list-open':
-            list_open_sgs()
+            print_open_sgs()
       elif args.command == 'list-closed':
-            list_closed_sgs()
+            print_closed_sgs()
 
 
 if __name__ == "__main__":
