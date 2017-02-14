@@ -3,7 +3,7 @@
 
 import boto3
 from ipaddress import IPv4Network, IPv4Address
-from .utils import get_external_ip
+from awsesame.utils import get_external_ip
 
 def list_open_sgs():
       ec2 = boto3.resource('ec2')
@@ -29,6 +29,8 @@ def list_closed_sgs():
 
 def print_open_sgs():
       tuples = list_open_sgs()
+      if not tuples:
+            print("No open Security groups found")
       for sg, permissions in tuples:
             print("%s open due to permissions:" % sg.group_name)
             for permission in permissions:
@@ -36,8 +38,10 @@ def print_open_sgs():
 
 def print_closed_sgs():
       sgs = list_closed_sgs()
+      if not sgs:
+            print("No closed Security groups found")
       for sg in sgs:
-            print (sg.group_name)
+            print(sg.group_name)
 
 def get_open_permissions(security_group, ip_address):
       permissions = []
