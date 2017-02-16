@@ -11,7 +11,7 @@ setup(name='awsesame',
             description='A set of scripts to open and close SSH on AWS Security groups easily',
             license='MIT',
             packages=['awsesame'],
-            requires=['requests', 'boto3', 'ipaddress'],
+            requires=['six', 'requests', 'boto3', 'ipaddress'],
             entry_points={
                   'console_scripts': [
                         'awsesame=awsesame.cli:main'

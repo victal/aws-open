@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import six
 import sys
 
 from argparse import ArgumentParser
@@ -28,6 +29,10 @@ def create_parser():
 
 
 def main():
+      if six.PY2:
+            print("Python 2 is not supported. Please Run this script with python 3 if you would.")
+            sys.exit(1)
+
       parser = create_parser()
       if len(sys.argv) == 1:
             parser.print_help()
