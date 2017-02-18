@@ -7,11 +7,17 @@ With this script, you can simply open port 22 on the external-facing Security gr
 
 ## Installation
 
-AWS-open works with python >= 3. It's not on PyPI yet, so for now you will have to clone this repository and run 
+AWS-open works with python >= 3. It's on PyPI so you just need to run 
+in order to install it.
+
+```
+# pip3 install aws-open
+```
+
+If you prefer to install the version from the lates commit on Github, you can also clone this repository and run
 ```
 # python3 setup.py install
 ```
-in order to install it.
 
 ## Usage
 
@@ -33,7 +39,6 @@ optional arguments:
 ## TODO:
 Not complete by any means
 
-- Upload project to PyPI
 - Tests (however possible)
 - Work with ports other than 22
 - Deal with Security group rules spanning multiple ports
