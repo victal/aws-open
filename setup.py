@@ -11,7 +11,7 @@ setup(name='awsesame',
             description='A small script to easily open and close external SSH on AWS Security groups.',
             license='MIT',
             packages=['awsesame'],
-            requires=['requests', 'boto3', 'ipaddress'],
+            requires=['six', 'requests', 'boto3', 'ipaddress'],
             entry_points={
                   'console_scripts': [
                         'awsesame=awsesame.cli:main'
@@ -33,10 +33,10 @@ setup(name='awsesame',
 
                   # Specify the Python versions you support here. In particular, ensure
                   # that you indicate whether you support Python 2, Python 3 or both.
-                  'Programming Language :: Python :: 2.7',
                   'Programming Language :: Python :: 3',
                   'Programming Language :: Python :: 3.2',
                   'Programming Language :: Python :: 3.3',
                   'Programming Language :: Python :: 3.4',
+                  'Programming Language :: Python :: 3.5',
                   ]
             )
