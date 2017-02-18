@@ -3,7 +3,7 @@
 
 from setuptools import setup
 
-setup(name='awsesame',
+setup(name='aws-open',
             version='1.0.0',
             author='Guilherme Victal',
             author_email='guilherme at victal.eti.br',
